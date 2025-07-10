@@ -6,8 +6,17 @@ function App() {
   const [stocks, setStocks] = useState([]);
 
   useEffect(() => {
-    fetchScreenedStocks().then(setStocks);
-  }, []);
+  fetchScreenedStocks()
+    .then(data => {
+      console.log("Fetched stocks:", data); // 🪵 Log it here
+      setStocks(data);
+    })
+    .catch(err => {
+      console.error("Error fetching stocks:", err);
+      setError(true);
+    })
+    .finally(() => setLoading(false));
+}, []);
 
   return (
     <div className="p-4 max-w-4xl mx-auto">
