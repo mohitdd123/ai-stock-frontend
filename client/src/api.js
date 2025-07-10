@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://ai-stock-screener.onrender.com';
+const BASE_URL = 'https://ai-stock-analyzer-1.onrender.com';
 
 export const fetchScreenedStocks = async () => {
   try {
